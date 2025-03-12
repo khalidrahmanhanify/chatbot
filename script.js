@@ -1,5 +1,5 @@
 const apiKey =
-  "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";
+  "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";
 
 function getAnswer(question) {
   if (!navigator.onLine) {
