@@ -1,0 +1,204 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+:root {
+  --bg-color: #101524;
+  --heading: #f2ddcc;
+  --input-container-border: #252c3e;
+  --input-container: #12192e;
+  --input: #0e121f;
+  --placeholder: #7981a1;
+  --sendBtn: #455172;
+  --question: #1d2439;
+}
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.container {
+  width: 600px;
+  border: none;
+  height: 100vh;
+  position: relative;
+}
+.content {
+  width: 100%;
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: 400;
+  border: none;
+  height: calc(100% - 80px);
+  overflow: auto;
+}
+.content::-webkit-scrollbar {
+  width: 5px;
+}
+.content::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 5px;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+}
+.answer-section {
+  padding: 0.5rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  list-style-position: inside;
+  opacity: 1;
+  transition: 0.2;
+}
+.question-section {
+  background-color: var(--question);
+  width: fit-content;
+  padding: 1rem;
+  margin-left: auto;
+  border-radius: 15px;
+  overflow-wrap: anywhere;
+}
+.chat-form {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: stretch; /* Allow child elements to expand */
+  background-color: var(--input-container);
+  border: 1px solid var(--input-container-border);
+  border-radius: 30px;
+  padding: 1rem;
+  column-gap: 10px;
+  min-height: 70px; /* Ensure initial height is good */
+}
+
+.chat-input {
+  padding: 1rem;
+  background-color: var(--input);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 16px;
+  width: 100%;
+  transition: 0.2s;
+  z-index: 1;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5;
+  min-height: 24px; /* 1 line */
+  max-height: 192px; /* 8 lines */
+  overflow-y: auto;
+  display: block; /* Ensures proper expansion */
+  field-sizing: content;
+}
+
+/* Slim scrollbar */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.send-button {
+  padding: 0;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: var(--sendBtn);
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out,
+    width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.chat-input:placeholder-shown {
+  width: 110%;
+}
+
+.chat-input:not(:placeholder-shown) {
+  width: 100%;
+}
+
+.chat-input:not(:placeholder-shown) ~ .send-button {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+}
+
+.send-button:hover {
+  background-color: #7981a1;
+}
+.send-button:active {
+  transform: scale(0.9);
+}
+.chat-input::placeholder {
+  color: var(--placeholder);
+  font-size: 1.03rem;
+}
+.send-button.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+@media (max-width: 750px) {
+  .container {
+    height: 95vh;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  * {
+    color: black;
+  }
+  body {
+    background-color: #f8f4f2;
+  }
+  .chat-form {
+    background-color: #fdf3e7;
+    border-color: #f8f8f8;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .chat-input {
+    background-color: #fffefc;
+  }
+  .chat-input::placeholder {
+    color: #7b7673;
+  }
+  .question-section {
+    background-color: #fce3cd;
+  }
+  .send-button {
+    background-color: #fce3cd;
+  }
+  svg {
+    fill: black;
+  }
+}

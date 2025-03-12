@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepSeek Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content" id="content">
+        <div class="answer-section">Hello, How can I help you today? 👋</div>
+        <!-- <div class="question-section">Hello!</div> -->
+      </div>
+      <div class="chat-form">
+        <!-- <input
+          type="text"
+          placeholder="Type a message"
+          class="chat-input"
+          id="chatInput"
+          autocomplete="off"
+          /> -->
+        <textarea
+          type="text"
+          placeholder="Type a message"
+          class="chat-input"
+          id="chatInput"
+          autocomplete="off"
+        ></textarea>
+        <button class="send-button" id="sendBtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="white"
+          >
+            <path
+              d="m21.426 11.095-17-8A1 1 0 0 0 3.03 4.242l1.212 4.849L12 12l-7.758 2.909-1.212 4.849a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
