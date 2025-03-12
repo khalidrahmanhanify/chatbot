@@ -1,5 +1,5 @@
 const apiKey =
-  "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";
+  "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";
 
 function getAnswer(question) {
   if (!navigator.onLine) {
@@ -22,6 +22,7 @@ function getAnswer(question) {
       },
       body: JSON.stringify({
         //   model: "deepseek/deepseek-r1-zero:free",
+        // model: "deepseek/deepseek-r1-distill-llama-70b:free",
         model: "deepseek/deepseek-r1-distill-llama-70b:free",
         messages: [
           {
